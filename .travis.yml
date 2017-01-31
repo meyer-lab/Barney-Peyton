@@ -1,8 +1,8 @@
 language: r
 
-r_packages:
-  - tidyverse
-  - knitr
+install:
+  - Rscript -e "install.packages('knitr')"
+  - Rscript -e "install.packages('tidyverse')"
 
 script:
   - Rscript -e "library(knitr); knit('Figures.Rmd')"
