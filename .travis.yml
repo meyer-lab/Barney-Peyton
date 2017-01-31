@@ -2,8 +2,9 @@ language: r
 
 r_packages:
   - tidyverse
+  - knitr
 
 script:
-  - R CMD Sweave Figures.Rmd
+  - Rscript -e "library(knitr); knit('Figures.Rmd')"
 
 after_success:
