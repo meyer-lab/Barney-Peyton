@@ -1,0 +1,10 @@
+language: r
+cache: packages
+
+r_packages:
+  - tidyverse
+
+script:
+  - R CMD Sweave Figures.Rmd
+
+after_success:
