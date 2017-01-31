@@ -1,4 +1,5 @@
 language: r
+cache: packages
 
 install:
   - Rscript -e "install.packages('knitr')"
