@@ -9,3 +9,8 @@ script:
   - Rscript -e "library(knitr); knit('Figures.Rmd')"
 
 after_success:
+  - mkdir deploy
+  - cd deploy
+  - git init
+  - git config user.name "Travis CI"
+  - git config user.email "notifications@travis-ci.org"
