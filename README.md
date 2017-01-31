@@ -1,4 +1,7 @@
 # Barney-Peyton
+
+[![Build Status](https://travis-ci.org/meyer-lab/Barney-Peyton.svg?branch=master)](https://travis-ci.org/meyer-lab/Barney-Peyton)
+
 Code for modeling performed in Barney et al.
 
 
