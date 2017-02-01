@@ -5,6 +5,7 @@ install:
   - Rscript -e "install.packages('knitr')"
   - Rscript -e "install.packages('dplyr')"
   - Rscript -e "install.packages('ggplot2')"
+  - Rscript -e "install.packages('tidyr')"
 
 script:
   - Rscript -e "library(knitr); knit('Figures.Rmd')"

@@ -5,7 +5,7 @@ date: "June 28, 2016"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE, echo=FALSE, fig.width=5}
+```{r setup, include=FALSE, echo=FALSE}
 library(dplyr)
 library(ggplot2)
 
@@ -39,9 +39,11 @@ DMSO control can be used for all 3 drugs (equalized DMSO concentration across al
 This plots the drug response in each matrix condition separately, against pMek. From this it's possible to see a relationship between viability and pMek that exists across matrix conditions.
 
 ```{r mek plot matrix}
-ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
+mekPlot <- ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
   geom_point() + facet_wrap( ~ matrix) + 
   coord_trans(x = "sqrt", y = "sqrt") + theme_bw() + ylab("Viability (RU)") + xlab("pMek")
+# Hid this output as it's not used in the manuscript.
+# plot(mekPlot)
 ```
 
 A linear regression model clearly shows that pMek significantly explains some of the variance in viability. Note that the model explains about 30% of the variance, so there certainly are changes in drug response not completely captured by the model still.
@@ -73,11 +75,16 @@ ggplot(data = plotD, aes(x = Estimate, y = log10(Pr...t..), label = rownames(plo
   geom_errorbarh(aes(xmin = Estimate - Std..Error, xmax = Estimate + Std..Error))
 ```
 
+
+# SKBR3
+
 I've plotted the SKBR3 data with respect to pMek just for consistency with the MB231 data. There are considerable matrix-dependent differences in drug response, but they aren't really explained by pMek.
 
 ```{r mek plot matrix skbr}
-ggplot(SKBR3, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + geom_point() + facet_wrap( ~ matrix) + 
+MekSKBR <- ggplot(SKBR3, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + geom_point() + facet_wrap( ~ matrix) + 
   coord_trans(x = "identity", y = "identity") + theme_bw() + ylab("Viability (RU)") + xlab("pMek")
+# Hid this output as it's not used in the manuscript
+# plot(MekSKBR)
 ```
 
 A linear model with the SKBR3 measurements doesn't really pick up much.
@@ -99,7 +106,7 @@ print(model.sum)
 
 Plot of SKBR3 model parameters.
 
-```{r}
+```{r, fig.width=4}
 # Extract the model coefficients for plotting
 plotD <- data.frame(model.sum$coefficients)
 
@@ -107,66 +114,4 @@ ggplot(data = plotD, aes(x = Estimate, y = log10(Pr...t..), label = rownames(plo
   geom_point() + theme_bw() + geom_text(nudge_y = 0.03) + scale_y_reverse() +
   ylab("Log10 P-Value") + ggtitle("SKBR3 Viability Linear Model") + 
   geom_errorbarh(aes(xmin = Estimate - Std..Error, xmax = Estimate + Std..Error))
-```
-
-
-
-
-
-
-# Pulled from skbrAnalysis file
-
-## Plot of EGFR vs. Proliferation
-This exists across each of the matrix conditions except the one with serum present (because little changes).
-
-```{r egfr plot matrix}
-ggplot(MB231, aes(x = EGFR, y = prolif, color = drug, shape = matrix)) + 
-  geom_point() + facet_wrap( ~ matrix, scales = "free_x")
-```
-
-
-
-
-
-
-
-
-# Pulled from Analysis file
-
-## Overall Results
-
-By far the most significant effect is a correlation between viability and Mek or Erk phosphorylation.
-
-```{r mek plot all}
-ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
-  geom_point() + coord_trans(x = "sqrt", y = "sqrt")
-```
-
-Note that the pMek contribution doesn't seem to be present when you look across drugs, but that may be a consequence of normalization.
-
-```{r mek plot drug}
-ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
-  geom_point() + facet_wrap( ~ drug) + 
-  coord_trans(x = "sqrt", y = "sqrt")
-```
-
-And you can build a linear model in which the contribution from pMek is significant with old or new viability data.
-
-```{r}
-lmout <- lm(prolifTwo ~ MEK1, MB231)
-summary(lmout)
-```
-
-An interesting model you can assemble is one in which there is no intercept, and so a non-zero viability measurement must either "come" from pMek or the matrix environment. With this setup, the results suggest that the gel and serum conditions may provide some amount of pMek-independent viability promotion, while the single, sph, and TCPS conditions are fully explained by pMek.
-
-```{r}
-lmout <- lm(prolifTwo ~ MEK1 + matrix + 0, MB231)
-summary(lmout)
-```
-
-Looking at the residuals after fitting (essentially removing the contribution from Mek and then looking for other factors) or building an overall model doesn't identify contributions from phosphosites other than Mek/Erk.
-
-```{r}
-lmout2 <- lm(lmout$residuals ~ CREB + EGFR + NFkB + p38 + AKT + JNK, MB231)
-summary(lmout2)
 ```

@@ -4,11 +4,7 @@ Code for modeling performed in Barney et al.
 
 [![Build Status](https://travis-ci.org/meyer-lab/Barney-Peyton.svg?branch=master)](https://travis-ci.org/meyer-lab/Barney-Peyton)
 
-You can find the output built through Travis CI [here](https://meyer-lab.github.io/Barney-Peyton/Figures.md.html).
-
-
-
-
+The assembled modeling output is contained within `Figures.nb.html`.
 
 
 
