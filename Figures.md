@@ -28,12 +28,12 @@ This plots the drug response in each matrix condition separately, against pMek. 
 
 
 ```r
-mekPlot <- ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
+ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
   geom_point() + facet_wrap( ~ matrix) + 
   coord_trans(x = "sqrt", y = "sqrt") + theme_bw() + ylab("Viability (RU)") + xlab("pMek")
-# Hid this output as it's not used in the manuscript.
-# plot(mekPlot)
 ```
+
+![](Figures_files/figure-html/mek plot matrix-1.png)<!-- -->
 
 A linear regression model clearly shows that pMek significantly explains some of the variance in viability. Note that the model explains about 30% of the variance, so there certainly are changes in drug response not completely captured by the model still.
 
@@ -102,11 +102,11 @@ I've plotted the SKBR3 data with respect to pMek just for consistency with the M
 
 
 ```r
-MekSKBR <- ggplot(SKBR3, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + geom_point() + facet_wrap( ~ matrix) + 
+ggplot(SKBR3, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + geom_point() + facet_wrap( ~ matrix) + 
   coord_trans(x = "identity", y = "identity") + theme_bw() + ylab("Viability (RU)") + xlab("pMek")
-# Hid this output as it's not used in the manuscript
-# plot(MekSKBR)
 ```
+
+![](Figures_files/figure-html/mek plot matrix skbr-1.png)<!-- -->
 
 A linear model with the SKBR3 measurements doesn't really pick up much.
 

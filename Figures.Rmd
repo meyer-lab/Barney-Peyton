@@ -41,11 +41,9 @@ DMSO control can be used for all 3 drugs (equalized DMSO concentration across al
 This plots the drug response in each matrix condition separately, against pMek. From this it's possible to see a relationship between viability and pMek that exists across matrix conditions.
 
 ```{r mek plot matrix}
-mekPlot <- ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
+ggplot(MB231, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + 
   geom_point() + facet_wrap( ~ matrix) + 
   coord_trans(x = "sqrt", y = "sqrt") + theme_bw() + ylab("Viability (RU)") + xlab("pMek")
-# Hid this output as it's not used in the manuscript.
-# plot(mekPlot)
 ```
 
 A linear regression model clearly shows that pMek significantly explains some of the variance in viability. Note that the model explains about 30% of the variance, so there certainly are changes in drug response not completely captured by the model still.
@@ -83,10 +81,8 @@ ggplot(data = plotD, aes(x = Estimate, y = log10(Pr...t..), label = rownames(plo
 I've plotted the SKBR3 data with respect to pMek just for consistency with the MB231 data. There are considerable matrix-dependent differences in drug response, but they aren't really explained by pMek.
 
 ```{r mek plot matrix skbr}
-MekSKBR <- ggplot(SKBR3, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + geom_point() + facet_wrap( ~ matrix) + 
+ggplot(SKBR3, aes(x = MEK1, y = prolifTwo, color = drug, shape = matrix)) + geom_point() + facet_wrap( ~ matrix) + 
   coord_trans(x = "identity", y = "identity") + theme_bw() + ylab("Viability (RU)") + xlab("pMek")
-# Hid this output as it's not used in the manuscript
-# plot(MekSKBR)
 ```
 
 A linear model with the SKBR3 measurements doesn't really pick up much.
