@@ -4,7 +4,7 @@ Code for modeling performed in Barney et al.
 
 [![Build Status](https://travis-ci.org/meyer-lab/Barney-Peyton.svg?branch=master)](https://travis-ci.org/meyer-lab/Barney-Peyton)
 
-The assembled modeling output is contained within `Figures.nb.html`.
+The assembled modeling output is contained within `Figures.md`.
 
 
 
