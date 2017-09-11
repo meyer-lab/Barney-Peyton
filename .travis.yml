@@ -9,3 +9,4 @@ install:
 
 script:
   - Rscript -e "library(knitr); knit('Figures.Rmd')"
+  - Rscript -e "library(knitr); knit('ReviewAddress.Rmd')"
