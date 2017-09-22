@@ -1,0 +1,66 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+MB231 <- read.csv("./data/MB231.csv", stringsAsFactors = FALSE) %>%
+  tidyr::separate(X, into = c("matrix", "drug"), sep = " ") %>%
+  mutate(matrix = as.factor(matrix)) %>%
+  dplyr::select(prolifTwo, CREB, EGFR, NFkB, p38, AKT, JNK, MEK1, ERK1.2, matrix) %>%
+  dplyr::filter(matrix != "sph") %>%
+  dplyr::filter(matrix != "single") %>%
+  dplyr::filter(matrix != "serum")
+
+
+modelWithoutECM <- function(MB231in, ECMint) {
+  selectt <- as.numeric(MB231in$matrix) != ECMint
+  
+  # Scaling the phospho-measurements by z-score
+  MB231d <- dplyr::filter(MB231in, selectt) %>%
+    dplyr::select(-matrix) %>%
+    scale(center = TRUE, scale = TRUE) %>% data.frame
+  
+  rowNum <- 8
+  
+  # Applying the linear model, Summarize the model
+  model.sum <- (summary(lm(prolifTwo ~ ., data = MB231d)))
+  #print(row.names(model.sum$coefficients)[rowNum])
+  
+  if (ECMint == 6) {
+    return(list(model.sum$coefficients[8, 2],
+                "none",
+                model.sum$coefficients[8, 4]))
+  } else {
+    return(list(model.sum$coefficients[8, 2],
+                levels(MB231in$matrix)[ECMint],
+                model.sum$coefficients[8, 4]))
+  }
+}
+
+DF <- data.frame(est=rep(NA, 6),
+                 ecm=rep("", 6),
+                 pval = rep(NA, 6),  # as many cols as you need
+                 stringsAsFactors=FALSE)          # you don't know levels yet
+
+
+for (ii in 1:6) {
+  DF[ii, ] <- modelWithoutECM(MB231, ii)
+}
+
+ggplot(DF, aes(ecm, -log(pval))) + geom_col() +
+  xlab("ECM Condition Removed") +
+  ylab("-log(Mek p-value) of Overall Model") +
+  geom_abline(slope = 0, intercept = -log(0.05)) +
+  ggplot2::ggtitle("Reduced Models")
+```
+
+
+
