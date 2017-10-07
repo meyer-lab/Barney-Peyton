@@ -142,7 +142,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("ReviewAddressThree.Rmd");
+  window.initializeSourceEmbed("ReviewAddressTwoF.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -172,175 +172,68 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
+<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code. Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkoZ2dwbG90Milcbk1CMjMxIDwtIHJlYWQuY3N2KFwiLi9kYXRhL01CMjMxLmNzdlwiLCBzdHJpbmdzQXNGYWN0b3JzID0gRkFMU0UpICU+JVxuICB0aWR5cjo6c2VwYXJhdGUoWCwgaW50byA9IGMoXCJtYXRyaXhcIiwgXCJkcnVnXCIpLCBzZXAgPSBcIiBcIikgJT4lXG4gIG11dGF0ZShtYXRyaXggPSBhcy5mYWN0b3IobWF0cml4KSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QocHJvbGlmVHdvLCBDUkVCLCBFR0ZSLCBORmtCLCBwMzgsIEFLVCwgSk5LLCBNRUsxLCBFUksxLjIsIG1hdHJpeCwgZHJ1ZylcbnJlc2NhbGVMTXN1bSA8LSBmdW5jdGlvbihkYXRhSW4pIHtcbiAgZGF0YUluIDwtIHNlbGVjdChkYXRhSW4sIC1tYXRyaXgsIC1kcnVnKSAlPiUgc2NhbGUoY2VudGVyID0gVFJVRSwgc2NhbGUgPSBUUlVFKSAlPiUgZGF0YS5mcmFtZVxuICAjIEFwcGx5aW5nIHRoZSBsaW5lYXIgbW9kZWxcbiAgbW9kZWwgPC0gbG0ocHJvbGlmVHdvIH4gLiArIDAsIGRhdGEgPSBkYXRhSW4pXG4gIFxuICAjIFN1bW1hcml6ZSB0aGUgbW9kZWxcbiAgcHJpbnQoc3VtbWFyeShtb2RlbCkpXG59XG5yZW1vdmUzRG1hdHJpeCA8LSBmdW5jdGlvbihkYXRhSW4pIHtcbiAgcmV0dXJuKGRhdGFJbiAlPiUgZmlsdGVyKG1hdHJpeCAhPSBcInNwaFwiKSAlPiUgZmlsdGVyKG1hdHJpeCAhPSBcInNpbmdsZVwiKSAlPiUgZmlsdGVyKG1hdHJpeCAhPSBcInNlcnVtXCIpKVxufVxucmVtb3ZlT3RoZXJEcnVnIDwtIGZ1bmN0aW9uKGRhdGFJbikge1xuICByZXR1cm4oZGF0YUluICU+JSBmaWx0ZXIoZHJ1ZyAhPSBcImxhcFwiKSAlPiUgZmlsdGVyKGRydWcgIT0gXCJ0ZW1zXCIpKVxufVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkoZ2dwbG90MilcblxuTUIyMzEgPC0gcmVhZC5jc3YoXCIuL2RhdGEvTUIyMzEuY3N2XCIsIHN0cmluZ3NBc0ZhY3RvcnMgPSBGQUxTRSkgJT4lXG4gIHRpZHlyOjpzZXBhcmF0ZShYLCBpbnRvID0gYyhcIm1hdHJpeFwiLCBcImRydWdcIiksIHNlcCA9IFwiIFwiKSAlPiVcbiAgbXV0YXRlKG1hdHJpeCA9IGFzLmZhY3RvcihtYXRyaXgpKSAlPiVcbiAgZHBseXI6OnNlbGVjdChwcm9saWZUd28sIENSRUIsIEVHRlIsIE5Ga0IsIHAzOCwgQUtULCBKTkssIE1FSzEsIEVSSzEuMiwgbWF0cml4KSAlPiVcbiAgZHBseXI6OmZpbHRlcihtYXRyaXggIT0gXCJzcGhcIikgJT4lXG4gIGRwbHlyOjpmaWx0ZXIobWF0cml4ICE9IFwic2luZ2xlXCIpICU+JVxuICBkcGx5cjo6ZmlsdGVyKG1hdHJpeCAhPSBcInNlcnVtXCIpXG5cblxubW9kZWxXaXRob3V0RUNNIDwtIGZ1bmN0aW9uKE1CMjMxaW4sIEVDTWludCkge1xuICBzZWxlY3R0IDwtIGFzLm51bWVyaWMoTUIyMzFpbiRtYXRyaXgpICE9IEVDTWludFxuICBcbiAgIyBTY2FsaW5nIHRoZSBwaG9zcGhvLW1lYXN1cmVtZW50cyBieSB6LXNjb3JlXG4gIE1CMjMxZCA8LSBkcGx5cjo6ZmlsdGVyKE1CMjMxaW4sIHNlbGVjdHQpICU+JVxuICAgIGRwbHlyOjpzZWxlY3QoLW1hdHJpeCkgJT4lXG4gICAgc2NhbGUoY2VudGVyID0gVFJVRSwgc2NhbGUgPSBUUlVFKSAlPiUgZGF0YS5mcmFtZVxuICBcbiAgcm93TnVtIDwtIDhcbiAgXG4gICMgQXBwbHlpbmcgdGhlIGxpbmVhciBtb2RlbCwgU3VtbWFyaXplIHRoZSBtb2RlbFxuICBtb2RlbC5zdW0gPC0gKHN1bW1hcnkobG0ocHJvbGlmVHdvIH4gLiwgZGF0YSA9IE1CMjMxZCkpKVxuICAjcHJpbnQocm93Lm5hbWVzKG1vZGVsLnN1bSRjb2VmZmljaWVudHMpW3Jvd051bV0pXG4gIFxuICBpZiAoRUNNaW50ID09IDYpIHtcbiAgICByZXR1cm4obGlzdChtb2RlbC5zdW0kY29lZmZpY2llbnRzWzgsIDJdLFxuICAgICAgICAgICAgICAgIFwibm9uZVwiLFxuICAgICAgICAgICAgICAgIG1vZGVsLnN1bSRjb2VmZmljaWVudHNbOCwgNF0pKVxuICB9IGVsc2Uge1xuICAgIHJldHVybihsaXN0KG1vZGVsLnN1bSRjb2VmZmljaWVudHNbOCwgMl0sXG4gICAgICAgICAgICAgICAgbGV2ZWxzKE1CMjMxaW4kbWF0cml4KVtFQ01pbnRdLFxuICAgICAgICAgICAgICAgIG1vZGVsLnN1bSRjb2VmZmljaWVudHNbOCwgNF0pKVxuICB9XG59XG5cbkRGIDwtIGRhdGEuZnJhbWUoZXN0PXJlcChOQSwgNiksXG4gICAgICAgICAgICAgICAgIGVjbT1yZXAoXCJcIiwgNiksXG4gICAgICAgICAgICAgICAgIHB2YWwgPSByZXAoTkEsIDYpLCAgIyBhcyBtYW55IGNvbHMgYXMgeW91IG5lZWRcbiAgICAgICAgICAgICAgICAgc3RyaW5nc0FzRmFjdG9ycz1GQUxTRSkgICAgICAgICAgIyB5b3UgZG9uJ3Qga25vdyBsZXZlbHMgeWV0XG5cblxuZm9yIChpaSBpbiAxOjYpIHtcbiAgREZbaWksIF0gPC0gbW9kZWxXaXRob3V0RUNNKE1CMjMxLCBpaSlcbn1cblxuZ2dwbG90KERGLCBhZXMoZWNtLCAtbG9nKHB2YWwpKSkgKyBnZW9tX2NvbCgpICtcbiAgeGxhYihcIkVDTSBDb25kaXRpb24gUmVtb3ZlZFwiKSArXG4gIHlsYWIoXCItbG9nKE1layBwLXZhbHVlKSBvZiBPdmVyYWxsIE1vZGVsXCIpICtcbiAgZ2VvbV9hYmxpbmUoc2xvcGUgPSAwLCBpbnRlcmNlcHQgPSAtbG9nKDAuMDUpKSArXG4gIGdncGxvdDI6OmdndGl0bGUoXCJSZWR1Y2VkIE1vZGVsc1wiKVxuYGBgIn0= -->
 <pre class="r"><code>library(dplyr)
 library(ggplot2)
+
 MB231 &lt;- read.csv(&quot;./data/MB231.csv&quot;, stringsAsFactors = FALSE) %&gt;%
   tidyr::separate(X, into = c(&quot;matrix&quot;, &quot;drug&quot;), sep = &quot; &quot;) %&gt;%
   mutate(matrix = as.factor(matrix)) %&gt;%
-  dplyr::select(prolifTwo, CREB, EGFR, NFkB, p38, AKT, JNK, MEK1, ERK1.2, matrix, drug)
-rescaleLMsum &lt;- function(dataIn) {
-  dataIn &lt;- select(dataIn, -matrix, -drug) %&gt;% scale(center = TRUE, scale = TRUE) %&gt;% data.frame
-  # Applying the linear model
-  model &lt;- lm(prolifTwo ~ . + 0, data = dataIn)
+  dplyr::select(prolifTwo, CREB, EGFR, NFkB, p38, AKT, JNK, MEK1, ERK1.2, matrix) %&gt;%
+  dplyr::filter(matrix != &quot;sph&quot;) %&gt;%
+  dplyr::filter(matrix != &quot;single&quot;) %&gt;%
+  dplyr::filter(matrix != &quot;serum&quot;)
+
+
+modelWithoutECM &lt;- function(MB231in, ECMint) {
+  selectt &lt;- as.numeric(MB231in$matrix) != ECMint
   
-  # Summarize the model
-  print(summary(model))
+  # Scaling the phospho-measurements by z-score
+  MB231d &lt;- dplyr::filter(MB231in, selectt) %&gt;%
+    dplyr::select(-matrix) %&gt;%
+    scale(center = TRUE, scale = TRUE) %&gt;% data.frame
+  
+  rowNum &lt;- 8
+  
+  # Applying the linear model, Summarize the model
+  model.sum &lt;- (summary(lm(prolifTwo ~ ., data = MB231d)))
+  #print(row.names(model.sum$coefficients)[rowNum])
+  
+  if (ECMint == 6) {
+    return(list(model.sum$coefficients[8, 2],
+                &quot;none&quot;,
+                model.sum$coefficients[8, 4]))
+  } else {
+    return(list(model.sum$coefficients[8, 2],
+                levels(MB231in$matrix)[ECMint],
+                model.sum$coefficients[8, 4]))
+  }
 }
-remove3Dmatrix &lt;- function(dataIn) {
-  return(dataIn %&gt;% filter(matrix != &quot;sph&quot;) %&gt;% filter(matrix != &quot;single&quot;) %&gt;% filter(matrix != &quot;serum&quot;))
+
+DF &lt;- data.frame(est=rep(NA, 6),
+                 ecm=rep(&quot;&quot;, 6),
+                 pval = rep(NA, 6),  # as many cols as you need
+                 stringsAsFactors=FALSE)          # you don't know levels yet
+
+
+for (ii in 1:6) {
+  DF[ii, ] &lt;- modelWithoutECM(MB231, ii)
 }
-removeOtherDrug &lt;- function(dataIn) {
-  return(dataIn %&gt;% filter(drug != &quot;lap&quot;) %&gt;% filter(drug != &quot;tems&quot;))
-}</code></pre>
+
+ggplot(DF, aes(ecm, -log(pval))) + geom_col() +
+  xlab(&quot;ECM Condition Removed&quot;) +
+  ylab(&quot;-log(Mek p-value) of Overall Model&quot;) +
+  geom_abline(slope = 0, intercept = -log(0.05)) +
+  ggplot2::ggtitle(&quot;Reduced Models&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>The full model:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTY2FsaW5nIHRoZSBwaG9zcGhvLW1lYXN1cmVtZW50cyBieSB6LXNjb3JlXG5NQjIzMSAlPiUgcmVzY2FsZUxNc3VtKClcbmBgYCJ9 -->
-<pre class="r"><code># Scaling the phospho-measurements by z-score
-MB231 %&gt;% rescaleLMsum()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IHByb2xpZlR3byB+IC4gKyAwLCBkYXRhID0gZGF0YUluKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tMS41NDU3IC0wLjQ5MjQgLTAuMTA5NCAgMC40MDA3ICAzLjE0MDUgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICAgXG5DUkVCICAgIDAuMDg4MzkgICAgMC4xOTgzOCAgIDAuNDQ2ICAgMC42NTczICAgIFxuRUdGUiAgIC0wLjUyMjI5ICAgIDAuMjIwNDUgIC0yLjM2OSAgIDAuMDIwNSAqICBcbk5Ga0IgICAgMC4xMDkwMSAgICAwLjE4NDU3ICAgMC41OTEgICAwLjU1NjYgICAgXG5wMzggICAgIDAuMDg5NzAgICAgMC4yMTEwOSAgIDAuNDI1ICAgMC42NzIyICAgIFxuQUtUICAgIC0wLjM4MDExICAgIDAuMTU5NTAgIC0yLjM4MyAgIDAuMDE5OCAqICBcbkpOSyAgICAgMC4yODI3NyAgICAwLjE2OTQ4ICAgMS42NjkgICAwLjA5OTYgLiAgXG5NRUsxICAgIDAuOTQyNTcgICAgMC4yMTQ5NiAgIDQuMzg1IDMuODllLTA1ICoqKlxuRVJLMS4yIC0wLjMxOTUzICAgIDAuMTg0NjYgIC0xLjczMCAgIDAuMDg3OCAuICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogMC44NDEzIG9uIDcyIGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC4zNTQ5LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC4yODMyIFxuRi1zdGF0aXN0aWM6IDQuOTUyIG9uIDggYW5kIDcyIERGLCAgcC12YWx1ZTogNi42NDZlLTA1XG4ifQ== -->
-<pre><code>
-Call:
-lm(formula = prolifTwo ~ . + 0, data = dataIn)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.5457 -0.4924 -0.1094  0.4007  3.1405 
-
-Coefficients:
-       Estimate Std. Error t value Pr(&gt;|t|)    
-CREB    0.08839    0.19838   0.446   0.6573    
-EGFR   -0.52229    0.22045  -2.369   0.0205 *  
-NFkB    0.10901    0.18457   0.591   0.5566    
-p38     0.08970    0.21109   0.425   0.6722    
-AKT    -0.38011    0.15950  -2.383   0.0198 *  
-JNK     0.28277    0.16948   1.669   0.0996 .  
-MEK1    0.94257    0.21496   4.385 3.89e-05 ***
-ERK1.2 -0.31953    0.18466  -1.730   0.0878 .  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.8413 on 72 degrees of freedom
-Multiple R-squared:  0.3549,    Adjusted R-squared:  0.2832 
-F-statistic: 4.952 on 8 and 72 DF,  p-value: 6.646e-05</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>The model without lap or tems:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTY2FsaW5nIHRoZSBwaG9zcGhvLW1lYXN1cmVtZW50cyBieSB6LXNjb3JlXG5NQjIzMSAlPiUgcmVtb3ZlT3RoZXJEcnVnKCkgJT4lIHJlc2NhbGVMTXN1bSgpXG5gYGAifQ== -->
-<pre class="r"><code># Scaling the phospho-measurements by z-score
-MB231 %&gt;% removeOtherDrug() %&gt;% rescaleLMsum()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IHByb2xpZlR3byB+IC4gKyAwLCBkYXRhID0gZGF0YUluKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tMS44MTA5IC0wLjYzODcgIDAuMzI3NSAgMC42NTkyICAxLjIwNjYgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICBcbkNSRUIgICAgMC40NDc1MDQgICAwLjQwNzQ2MCAgIDEuMDk4ICAgMC4yODAzICBcbkVHRlIgICAtMC45MTEyMTQgICAwLjQ0NDE3MyAgLTIuMDUxICAgMC4wNDg1ICpcbk5Ga0IgICAgMC4yMTAxMDkgICAwLjM1NDM3NSAgIDAuNTkzICAgMC41NTc0ICBcbnAzOCAgICAgMC4xNzUxNTEgICAwLjI1MDIyMSAgIDAuNzAwICAgMC40ODkwICBcbkFLVCAgICAtMC41NTQxNjYgICAwLjI5MDA4MiAgLTEuOTEwICAgMC4wNjUxIC5cbkpOSyAgICAgMC4yMTAzODggICAwLjIxNDMzOCAgIDAuOTgyICAgMC4zMzM3ICBcbk1FSzEgICAgMC42OTc4MjggICAwLjMzODQyMyAgIDIuMDYyICAgMC4wNDc0ICpcbkVSSzEuMiAtMC4wMDE3MjcgICAwLjQwMDM3OSAgLTAuMDA0ICAgMC45OTY2ICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogMC45MTU3IG9uIDMyIGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC4zMTIsXHRBZGp1c3RlZCBSLXNxdWFyZWQ6ICAgMC4xNCBcbkYtc3RhdGlzdGljOiAxLjgxNCBvbiA4IGFuZCAzMiBERiwgIHAtdmFsdWU6IDAuMTEwOVxuIn0= -->
-<pre><code>
-Call:
-lm(formula = prolifTwo ~ . + 0, data = dataIn)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.8109 -0.6387  0.3275  0.6592  1.2066 
-
-Coefficients:
-        Estimate Std. Error t value Pr(&gt;|t|)  
-CREB    0.447504   0.407460   1.098   0.2803  
-EGFR   -0.911214   0.444173  -2.051   0.0485 *
-NFkB    0.210109   0.354375   0.593   0.5574  
-p38     0.175151   0.250221   0.700   0.4890  
-AKT    -0.554166   0.290082  -1.910   0.0651 .
-JNK     0.210388   0.214338   0.982   0.3337  
-MEK1    0.697828   0.338423   2.062   0.0474 *
-ERK1.2 -0.001727   0.400379  -0.004   0.9966  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.9157 on 32 degrees of freedom
-Multiple R-squared:  0.312, Adjusted R-squared:   0.14 
-F-statistic: 1.814 on 8 and 32 DF,  p-value: 0.1109</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>The model without 3D matrices:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTY2FsaW5nIHRoZSBwaG9zcGhvLW1lYXN1cmVtZW50cyBieSB6LXNjb3JlXG5NQjIzMSAlPiUgcmVtb3ZlM0RtYXRyaXgoKSAlPiUgcmVzY2FsZUxNc3VtKClcbmBgYCJ9 -->
-<pre class="r"><code># Scaling the phospho-measurements by z-score
-MB231 %&gt;% remove3Dmatrix() %&gt;% rescaleLMsum()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IHByb2xpZlR3byB+IC4gKyAwLCBkYXRhID0gZGF0YUluKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tMS4zMTc4IC0wLjM3MzcgLTAuMjEwNiAgMC4yNjA0ICAxLjg3NzUgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICBFc3RpbWF0ZSBTdGQuIEVycm9yIHQgdmFsdWUgUHIoPnx0fCkgICBcbkNSRUIgICAgMC4yOTI1NSAgICAwLjMxOTMyICAgMC45MTYgIDAuMzY4NjkgICBcbkVHRlIgICAtMC41Mzk2MSAgICAwLjMyNDU1ICAtMS42NjMgIDAuMTA5MzkgICBcbk5Ga0IgICAtMC40ODY4MSAgICAwLjMzMzM4ICAtMS40NjAgIDAuMTU3MjAgICBcbnAzOCAgICAgMC4xNDEzNCAgICAwLjM3MDM4ICAgMC4zODIgIDAuNzA2MTIgICBcbkFLVCAgICAgMC4xMTg0NiAgICAwLjI4MTk4ICAgMC40MjAgIDAuNjc4MTUgICBcbkpOSyAgICAgMC4wNzQzNCAgICAwLjI2NDE5ICAgMC4yODEgIDAuNzgwODIgICBcbk1FSzEgICAgMC45MTMxNCAgICAwLjMwODA1ICAgMi45NjQgIDAuMDA2NzYgKipcbkVSSzEuMiAtMC41MzU4MyAgICAwLjI2OTg2ICAtMS45ODYgIDAuMDU4NjIgLiBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogMC44NDc2IG9uIDI0IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC40NDM4LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC4yNTg0IFxuRi1zdGF0aXN0aWM6IDIuMzk0IG9uIDggYW5kIDI0IERGLCAgcC12YWx1ZTogMC4wNDY5MVxuIn0= -->
-<pre><code>
-Call:
-lm(formula = prolifTwo ~ . + 0, data = dataIn)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.3178 -0.3737 -0.2106  0.2604  1.8775 
-
-Coefficients:
-       Estimate Std. Error t value Pr(&gt;|t|)   
-CREB    0.29255    0.31932   0.916  0.36869   
-EGFR   -0.53961    0.32455  -1.663  0.10939   
-NFkB   -0.48681    0.33338  -1.460  0.15720   
-p38     0.14134    0.37038   0.382  0.70612   
-AKT     0.11846    0.28198   0.420  0.67815   
-JNK     0.07434    0.26419   0.281  0.78082   
-MEK1    0.91314    0.30805   2.964  0.00676 **
-ERK1.2 -0.53583    0.26986  -1.986  0.05862 . 
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.8476 on 24 degrees of freedom
-Multiple R-squared:  0.4438,    Adjusted R-squared:  0.2584 
-F-statistic: 2.394 on 8 and 24 DF,  p-value: 0.04691</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>The model without 3D matrices, lab or tems:</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTY2FsaW5nIHRoZSBwaG9zcGhvLW1lYXN1cmVtZW50cyBieSB6LXNjb3JlXG5NQjIzMSAlPiUgcmVtb3ZlT3RoZXJEcnVnKCkgJT4lIHJlbW92ZTNEbWF0cml4KCkgJT4lIHJlc2NhbGVMTXN1bSgpXG5gYGAifQ== -->
-<pre class="r"><code># Scaling the phospho-measurements by z-score
-MB231 %&gt;% removeOtherDrug() %&gt;% remove3Dmatrix() %&gt;% rescaleLMsum()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IHByb2xpZlR3byB+IC4gKyAwLCBkYXRhID0gZGF0YUluKVxuXG5SZXNpZHVhbHM6XG4gICAgIE1pbiAgICAgICAxUSAgIE1lZGlhbiAgICAgICAzUSAgICAgIE1heCBcbi0wLjU1NzkzIC0wLjExNTc3IC0wLjAyOTk5ICAwLjE3MTk0ICAwLjM2MzMxIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgXG5DUkVCICAgIDAuODAyOTQgICAgMC4yNjcxNCAgIDMuMDA2ICAwLjAxNjkzICogXG5FR0ZSICAgLTEuMDAzMDAgICAgMC4yMzk4NyAgLTQuMTgxICAwLjAwMzA3ICoqXG5ORmtCICAgLTAuNjEyNzkgICAgMC4zMzU5MCAgLTEuODI0ICAwLjEwNTU2ICAgXG5wMzggICAgIDAuMjgyMTEgICAgMC4xODE1OCAgIDEuNTU0ICAwLjE1ODg2ICAgXG5BS1QgICAgIDAuMzE2NDcgICAgMC4xOTQ1MCAgIDEuNjI3ICAwLjE0MjM3ICAgXG5KTksgICAgIDAuMDgyNDIgICAgMC4xMDU4OCAgIDAuNzc4ICAwLjQ1ODcwICAgXG5NRUsxICAgIDAuMTU0NjYgICAgMC4zMDY5OCAgIDAuNTA0ICAwLjYyNzk5ICAgXG5FUksxLjIgIDAuMjkwMDggICAgMC4zNTk3MCAgIDAuODA2ICAwLjQ0MzMwICAgXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuUmVzaWR1YWwgc3RhbmRhcmQgZXJyb3I6IDAuMzIyOCBvbiA4IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC45NDQ0LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC44ODg4IFxuRi1zdGF0aXN0aWM6IDE2Ljk5IG9uIDggYW5kIDggREYsICBwLXZhbHVlOiAwLjAwMDI5MTZcbiJ9 -->
-<pre><code>
-Call:
-lm(formula = prolifTwo ~ . + 0, data = dataIn)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.55793 -0.11577 -0.02999  0.17194  0.36331 
-
-Coefficients:
-       Estimate Std. Error t value Pr(&gt;|t|)   
-CREB    0.80294    0.26714   3.006  0.01693 * 
-EGFR   -1.00300    0.23987  -4.181  0.00307 **
-NFkB   -0.61279    0.33590  -1.824  0.10556   
-p38     0.28211    0.18158   1.554  0.15886   
-AKT     0.31647    0.19450   1.627  0.14237   
-JNK     0.08242    0.10588   0.778  0.45870   
-MEK1    0.15466    0.30698   0.504  0.62799   
-ERK1.2  0.29008    0.35970   0.806  0.44330   
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.3228 on 8 degrees of freedom
-Multiple R-squared:  0.9444,    Adjusted R-squared:  0.8888 
-F-statistic: 16.99 on 8 and 8 DF,  p-value: 0.0002916</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiAKICBodG1sX2RvY3VtZW50OgogICAga2VlcF9tZDogdHJ1ZSAKLS0tCgpgYGB7cn0KbGlicmFyeShkcGx5cikKbGlicmFyeShnZ3Bsb3QyKQoKTUIyMzEgPC0gcmVhZC5jc3YoIi4vZGF0YS9NQjIzMS5jc3YiLCBzdHJpbmdzQXNGYWN0b3JzID0gRkFMU0UpICU+JQogIHRpZHlyOjpzZXBhcmF0ZShYLCBpbnRvID0gYygibWF0cml4IiwgImRydWciKSwgc2VwID0gIiAiKSAlPiUKICBtdXRhdGUobWF0cml4ID0gYXMuZmFjdG9yKG1hdHJpeCkpICU+JQogIGRwbHlyOjpzZWxlY3QocHJvbGlmVHdvLCBDUkVCLCBFR0ZSLCBORmtCLCBwMzgsIEFLVCwgSk5LLCBNRUsxLCBFUksxLjIsIG1hdHJpeCwgZHJ1ZykKCnJlc2NhbGVMTXN1bSA8LSBmdW5jdGlvbihkYXRhSW4pIHsKICBkYXRhSW4gPC0gc2VsZWN0KGRhdGFJbiwgLW1hdHJpeCwgLWRydWcpICU+JSBzY2FsZShjZW50ZXIgPSBUUlVFLCBzY2FsZSA9IFRSVUUpICU+JSBkYXRhLmZyYW1lCgogICMgQXBwbHlpbmcgdGhlIGxpbmVhciBtb2RlbAogIG1vZGVsIDwtIGxtKHByb2xpZlR3byB+IC4gKyAwLCBkYXRhID0gZGF0YUluKQogIAogICMgU3VtbWFyaXplIHRoZSBtb2RlbAogIHByaW50KHN1bW1hcnkobW9kZWwpKQp9CgpyZW1vdmUzRG1hdHJpeCA8LSBmdW5jdGlvbihkYXRhSW4pIHsKICByZXR1cm4oZGF0YUluICU+JSBmaWx0ZXIobWF0cml4ICE9ICJzcGgiKSAlPiUgZmlsdGVyKG1hdHJpeCAhPSAic2luZ2xlIikgJT4lIGZpbHRlcihtYXRyaXggIT0gInNlcnVtIikpCn0KCnJlbW92ZU90aGVyRHJ1ZyA8LSBmdW5jdGlvbihkYXRhSW4pIHsKICByZXR1cm4oZGF0YUluICU+JSBmaWx0ZXIoZHJ1ZyAhPSAibGFwIikgJT4lIGZpbHRlcihkcnVnICE9ICJ0ZW1zIikpCn0KYGBgCgpUaGUgZnVsbCBtb2RlbDoKCmBgYHtyfQojIFNjYWxpbmcgdGhlIHBob3NwaG8tbWVhc3VyZW1lbnRzIGJ5IHotc2NvcmUKTUIyMzEgJT4lIHJlc2NhbGVMTXN1bSgpCmBgYAoKVGhlIG1vZGVsIHdpdGhvdXQgbGFwIG9yIHRlbXM6CgpgYGB7cn0KIyBTY2FsaW5nIHRoZSBwaG9zcGhvLW1lYXN1cmVtZW50cyBieSB6LXNjb3JlCk1CMjMxICU+JSByZW1vdmVPdGhlckRydWcoKSAlPiUgcmVzY2FsZUxNc3VtKCkKYGBgCgpUaGUgbW9kZWwgd2l0aG91dCAzRCBtYXRyaWNlczoKCmBgYHtyfQojIFNjYWxpbmcgdGhlIHBob3NwaG8tbWVhc3VyZW1lbnRzIGJ5IHotc2NvcmUKTUIyMzEgJT4lIHJlbW92ZTNEbWF0cml4KCkgJT4lIHJlc2NhbGVMTXN1bSgpCmBgYAoKVGhlIG1vZGVsIHdpdGhvdXQgM0QgbWF0cmljZXMsIGxhYiBvciB0ZW1zOgoKYGBge3J9CiMgU2NhbGluZyB0aGUgcGhvc3Boby1tZWFzdXJlbWVudHMgYnkgei1zY29yZQpNQjIzMSAlPiUgcmVtb3ZlT3RoZXJEcnVnKCkgJT4lIHJlbW92ZTNEbWF0cml4KCkgJT4lIHJlc2NhbGVMTXN1bSgpCmBgYAoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OgogIHBkZl9kb2N1bWVudDogZGVmYXVsdAogIGh0bWxfbm90ZWJvb2s6IGRlZmF1bHQKLS0tCgpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiBUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KbGlicmFyeShkcGx5cikKbGlicmFyeShnZ3Bsb3QyKQoKTUIyMzEgPC0gcmVhZC5jc3YoIi4vZGF0YS9NQjIzMS5jc3YiLCBzdHJpbmdzQXNGYWN0b3JzID0gRkFMU0UpICU+JQogIHRpZHlyOjpzZXBhcmF0ZShYLCBpbnRvID0gYygibWF0cml4IiwgImRydWciKSwgc2VwID0gIiAiKSAlPiUKICBtdXRhdGUobWF0cml4ID0gYXMuZmFjdG9yKG1hdHJpeCkpICU+JQogIGRwbHlyOjpzZWxlY3QocHJvbGlmVHdvLCBDUkVCLCBFR0ZSLCBORmtCLCBwMzgsIEFLVCwgSk5LLCBNRUsxLCBFUksxLjIsIG1hdHJpeCkgJT4lCiAgZHBseXI6OmZpbHRlcihtYXRyaXggIT0gInNwaCIpICU+JQogIGRwbHlyOjpmaWx0ZXIobWF0cml4ICE9ICJzaW5nbGUiKSAlPiUKICBkcGx5cjo6ZmlsdGVyKG1hdHJpeCAhPSAic2VydW0iKQoKCm1vZGVsV2l0aG91dEVDTSA8LSBmdW5jdGlvbihNQjIzMWluLCBFQ01pbnQpIHsKICBzZWxlY3R0IDwtIGFzLm51bWVyaWMoTUIyMzFpbiRtYXRyaXgpICE9IEVDTWludAogIAogICMgU2NhbGluZyB0aGUgcGhvc3Boby1tZWFzdXJlbWVudHMgYnkgei1zY29yZQogIE1CMjMxZCA8LSBkcGx5cjo6ZmlsdGVyKE1CMjMxaW4sIHNlbGVjdHQpICU+JQogICAgZHBseXI6OnNlbGVjdCgtbWF0cml4KSAlPiUKICAgIHNjYWxlKGNlbnRlciA9IFRSVUUsIHNjYWxlID0gVFJVRSkgJT4lIGRhdGEuZnJhbWUKICAKICByb3dOdW0gPC0gOAogIAogICMgQXBwbHlpbmcgdGhlIGxpbmVhciBtb2RlbCwgU3VtbWFyaXplIHRoZSBtb2RlbAogIG1vZGVsLnN1bSA8LSAoc3VtbWFyeShsbShwcm9saWZUd28gfiAuLCBkYXRhID0gTUIyMzFkKSkpCiAgI3ByaW50KHJvdy5uYW1lcyhtb2RlbC5zdW0kY29lZmZpY2llbnRzKVtyb3dOdW1dKQogIAogIGlmIChFQ01pbnQgPT0gNikgewogICAgcmV0dXJuKGxpc3QobW9kZWwuc3VtJGNvZWZmaWNpZW50c1s4LCAyXSwKICAgICAgICAgICAgICAgICJub25lIiwKICAgICAgICAgICAgICAgIG1vZGVsLnN1bSRjb2VmZmljaWVudHNbOCwgNF0pKQogIH0gZWxzZSB7CiAgICByZXR1cm4obGlzdChtb2RlbC5zdW0kY29lZmZpY2llbnRzWzgsIDJdLAogICAgICAgICAgICAgICAgbGV2ZWxzKE1CMjMxaW4kbWF0cml4KVtFQ01pbnRdLAogICAgICAgICAgICAgICAgbW9kZWwuc3VtJGNvZWZmaWNpZW50c1s4LCA0XSkpCiAgfQp9CgpERiA8LSBkYXRhLmZyYW1lKGVzdD1yZXAoTkEsIDYpLAogICAgICAgICAgICAgICAgIGVjbT1yZXAoIiIsIDYpLAogICAgICAgICAgICAgICAgIHB2YWwgPSByZXAoTkEsIDYpLCAgIyBhcyBtYW55IGNvbHMgYXMgeW91IG5lZWQKICAgICAgICAgICAgICAgICBzdHJpbmdzQXNGYWN0b3JzPUZBTFNFKSAgICAgICAgICAjIHlvdSBkb24ndCBrbm93IGxldmVscyB5ZXQKCgpmb3IgKGlpIGluIDE6NikgewogIERGW2lpLCBdIDwtIG1vZGVsV2l0aG91dEVDTShNQjIzMSwgaWkpCn0KCmdncGxvdChERiwgYWVzKGVjbSwgLWxvZyhwdmFsKSkpICsgZ2VvbV9jb2woKSArCiAgeGxhYigiRUNNIENvbmRpdGlvbiBSZW1vdmVkIikgKwogIHlsYWIoIi1sb2coTWVrIHAtdmFsdWUpIG9mIE92ZXJhbGwgTW9kZWwiKSArCiAgZ2VvbV9hYmxpbmUoc2xvcGUgPSAwLCBpbnRlcmNlcHQgPSAtbG9nKDAuMDUpKSArCiAgZ2dwbG90Mjo6Z2d0aXRsZSgiUmVkdWNlZCBNb2RlbHMiKQpgYGAKCgoK</div>
 
 
 
