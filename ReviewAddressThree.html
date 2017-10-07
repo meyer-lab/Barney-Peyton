@@ -208,7 +208,7 @@ MB231 %&gt;% removeOtherDrug() %&gt;% rescaleLMsum()</code></pre>
 ## Residual standard error: 0.9157 on 32 degrees of freedom
 ## Multiple R-squared:  0.312,  Adjusted R-squared:   0.14 
 ## F-statistic: 1.814 on 8 and 32 DF,  p-value: 0.1109</code></pre>
-<p>The model without sph or single matrices:</p>
+<p>The model without 3D matrices:</p>
 <pre class="r"><code># Scaling the phospho-measurements by z-score
 MB231 %&gt;% remove3Dmatrix() %&gt;% rescaleLMsum()</code></pre>
 <pre><code>## 
@@ -235,7 +235,7 @@ MB231 %&gt;% remove3Dmatrix() %&gt;% rescaleLMsum()</code></pre>
 ## Residual standard error: 0.8476 on 24 degrees of freedom
 ## Multiple R-squared:  0.4438, Adjusted R-squared:  0.2584 
 ## F-statistic: 2.394 on 8 and 24 DF,  p-value: 0.04691</code></pre>
-<p>The model without single sph matrices, lab or tems:</p>
+<p>The model without 3D matrices, lab or tems:</p>
 <pre class="r"><code># Scaling the phospho-measurements by z-score
 MB231 %&gt;% removeOtherDrug() %&gt;% remove3Dmatrix() %&gt;% rescaleLMsum()</code></pre>
 <pre><code>## 

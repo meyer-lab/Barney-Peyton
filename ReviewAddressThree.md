@@ -123,7 +123,7 @@ MB231 %>% removeOtherDrug() %>% rescaleLMsum()
 ## F-statistic: 1.814 on 8 and 32 DF,  p-value: 0.1109
 ```
 
-The model without sph or single matrices:
+The model without 3D matrices:
 
 
 ```r
@@ -158,7 +158,7 @@ MB231 %>% remove3Dmatrix() %>% rescaleLMsum()
 ## F-statistic: 2.394 on 8 and 24 DF,  p-value: 0.04691
 ```
 
-The model without single sph matrices, lab or tems:
+The model without 3D matrices, lab or tems:
 
 
 ```r
