@@ -47,14 +47,14 @@ The model without lap or tems:
 MB231 %>% removeOtherDrug() %>% rescaleLMsum()
 ```
 
-The model without sph or single matrices:
+The model without 3D matrices:
 
 ```{r}
 # Scaling the phospho-measurements by z-score
 MB231 %>% remove3Dmatrix() %>% rescaleLMsum()
 ```
 
-The model without single sph matrices, lab or tems:
+The model without 3D matrices, lab or tems:
 
 ```{r}
 # Scaling the phospho-measurements by z-score
