@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document: default
+  html_notebook: default
 ---
 
 ```{r}
@@ -21,6 +23,14 @@ rescaleLMsum <- function(dataIn) {
   # Summarize the model
   print(summary(model))
 }
+
+remove3Dmatrix <- function(dataIn) {
+  return(dataIn %>% filter(matrix != "sph") %>% filter(matrix != "single") %>% filter(matrix != "serum"))
+}
+
+removeOtherDrug <- function(dataIn) {
+  return(dataIn %>% filter(drug != "lap") %>% filter(drug != "tems"))
+}
 ```
 
 The full model:
@@ -34,25 +44,21 @@ The model without lap or tems:
 
 ```{r}
 # Scaling the phospho-measurements by z-score
-MB231 %>% filter(drug != "lap") %>% filter(drug != "tems") %>% rescaleLMsum()
+MB231 %>% removeOtherDrug() %>% rescaleLMsum()
 ```
 
 The model without sph or single matrices:
 
 ```{r}
 # Scaling the phospho-measurements by z-score
-MB231 %>% filter(matrix != "sph") %>%
-  filter(matrix != "single") %>% rescaleLMsum()
+MB231 %>% remove3Dmatrix() %>% rescaleLMsum()
 ```
 
 The model without single sph matrices, lab or tems:
 
 ```{r}
 # Scaling the phospho-measurements by z-score
-MB231 %>% filter(matrix != "sph") %>%
-  filter(drug != "lap") %>%
-  filter(drug != "tems") %>%
-  filter(matrix != "single") %>% rescaleLMsum()
+MB231 %>% removeOtherDrug() %>% remove3Dmatrix() %>% rescaleLMsum()
 ```
 
 
